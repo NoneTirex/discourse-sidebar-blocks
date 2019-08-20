@@ -10,10 +10,10 @@ createWidget('sidebar-activity-item', {
 
     const lastPostedAt = new Date(attrs.last_posted_at);
 	
-	attrs.user_id = attrs.id;
+    attrs.latest_poster.user_id = attrs.latest_poster.id;
 
     return [
-      h('span.avatar', this.attach('post-avatar', attrs)),
+      h('span.avatar', this.attach('post-avatar', attrs.latest_poster)),
       h('span.reply-date', {}, dateNode(lastPostedAt)),
       h('a.item-title', {
         attributes: { href: url}
