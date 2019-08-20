@@ -9,5 +9,6 @@ en:
         empty: "No recent activity."
       leaderboard:
         title: "Leaderboard"
+        user: "User"
         received_likes: "Received"
         empty: "No user loaded."

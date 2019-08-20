@@ -73,10 +73,10 @@ createWidget('sidebar-leaderboard', {
 					h("table", [
 					  h("tbody", [
 					    h("tr", [
-					      h("th", 'User'),
+					      h("th", I18n.t('sidebar_blocks.leaderboard.user')),
 					      h("th", [
 									iconNode('heart'),
-									h('span', I18n.t('sidebar_blocks.recent_replies.received_likes'))
+									h('span', I18n.t('sidebar_blocks.leaderboard.received_likes'))
 								])
 					    ]),
 					    users
