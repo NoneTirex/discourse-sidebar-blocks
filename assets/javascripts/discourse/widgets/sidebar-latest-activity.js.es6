@@ -24,12 +24,6 @@ export default createWidget('sidebar-latest-activity', {
 		  post.latest_poster = this.findLatestPoster(post.posters, users);
 		  posts[i] = post;
 		}
-        for (var i = result.length - 1; i >= 0; i--) {
-          // limit to 5 max
-          if (i > 4) {
-            result.splice(i, 1);
-          }
-        }
         this.state.posts = posts;
       }
       this.state.loading = false
@@ -37,12 +31,14 @@ export default createWidget('sidebar-latest-activity', {
     })
   },
   findLatestPoster(posters, users) {
+    console.log(posters);
     for (var i = 0; i < posters.length; i++)
 	{
 	  var poster = posters[i];
 	  poster.user_id = poster.id;
-          if (poster.extras && poster.extras.indexOf("latest") >= 0)
+          if (poster.extras !== null && poster.extras.indexOf("latest") >= 0)
 	  {
+            console.log(poster);
 	    return poster;
 	  }
 	}
