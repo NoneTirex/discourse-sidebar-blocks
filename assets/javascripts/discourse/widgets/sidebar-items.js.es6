@@ -17,6 +17,8 @@ export default createWidget('sidebar-items', {
     sidebarBlocks.map(function(item) {
       if (item == 'latest_replies') {
         result.push(self.attach('sidebar-latest-replies'));
+      } else if (item == 'latest_activity') {
+        result.push(self.attach('sidebar-latest-activity'));
       } else if (item == 'custom_html') {
         result.push(self.attach('sidebar-custom-content'));
       } else if (item == 'leaderboard') {

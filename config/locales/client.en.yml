@@ -1,4 +1,13 @@
 en: 
   js: 
     sidebar_blocks: 
-      recent_replies: "Recent replies"
+      recent_replies:
+	    title: "Recent replies"
+		empty: "No recent replies."
+	  recent_activity:
+	    title: "Recent activity"
+		empty: "No recent activity."
+      leaderboard:
+	    title: "Leaderboard"
+		received_likes: "Received"
+		empty: "No user loaded."
