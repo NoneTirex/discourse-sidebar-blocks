@@ -9,8 +9,6 @@ createWidget('sidebar-activity-item', {
     var url = Discourse.getURL("/t/") + attrs.slug + "/" + attrs.id + "/" + attrs.last_read_post_number;
 
     const lastPostedAt = new Date(attrs.last_posted_at);
-	
-    attrs.latest_poster.user_id = attrs.latest_poster.id;
 
     return [
       h('span.avatar', this.attach('post-avatar', attrs.latest_poster)),

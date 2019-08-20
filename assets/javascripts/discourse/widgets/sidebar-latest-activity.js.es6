@@ -40,7 +40,8 @@ export default createWidget('sidebar-latest-activity', {
     for (var i = 0; i < posters.length; i++)
 	{
 	  var poster = posters[i];
-	  if (poster.extras && poster.extras.indexOf("latest") >= 0)
+	  poster.user_id = poster.id;
+          if (poster.extras && poster.extras.indexOf("latest") >= 0)
 	  {
 	    return poster;
 	  }
