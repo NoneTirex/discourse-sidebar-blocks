@@ -19,3 +19,6 @@ plugins:
   sidebar_leaderboard_period:
     default: 'daily'
     client: true
+  sidebar_topic_count:
+    default: "15"
+    client: true

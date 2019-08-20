@@ -18,7 +18,7 @@ export default createWidget('sidebar-latest-activity', {
 	  var topics = result.topic_list.topics;
       if (topics.length) {
 	    var posts = [];
-		for (var i = 0; i < topics.length; i++)
+		for (var i = 0; i < topics.length && i < parseInt(this.siteSettings.sidebar_topic_count); i++)
 		{
 		  var post = topics[i];
 		  post.latest_poster = this.findLatestPoster(post.posters, users);
