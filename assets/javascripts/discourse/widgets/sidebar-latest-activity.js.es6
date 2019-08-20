@@ -44,7 +44,7 @@ export default createWidget('sidebar-latest-activity', {
 	  var poster = posters[i];
           if (poster.extras !== null && poster.extras.indexOf("latest") >= 0)
 	  {
-            var user = this.findUser(poster.user_id);
+            var user = this.findUser(poster.user_id, users);
             user.user_id = user.id;
 	    return user;
 	  }
