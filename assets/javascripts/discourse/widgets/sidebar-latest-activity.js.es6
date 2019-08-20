@@ -30,16 +30,23 @@ export default createWidget('sidebar-latest-activity', {
       this.scheduleRerender()
     })
   },
+  findUser(id, users) {
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].id === id) {
+          return users[i];
+        }
+    }
+    return null;
+  },
   findLatestPoster(posters, users) {
-    console.log(posters);
     for (var i = 0; i < posters.length; i++)
 	{
 	  var poster = posters[i];
-	  poster.user_id = poster.id;
           if (poster.extras !== null && poster.extras.indexOf("latest") >= 0)
 	  {
-            console.log(poster);
-	    return poster;
+            var user = this.findUser(poster.user_id);
+            user.user_id = user.id;
+	    return user;
 	  }
 	}
 	return null;
