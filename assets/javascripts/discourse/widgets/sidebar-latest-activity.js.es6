@@ -13,7 +13,7 @@ export default createWidget('sidebar-latest-activity', {
     if (this.state.loading) { return; }
     this.state.loading = true
     this.state.posts = 'empty'
-    getLatestReplies(this).then((result) => {
+    getLatestActivity(this).then((result) => {
       var users = result.users;
 	  var topics = result.topic_list.topics;
       if (topics.length) {
