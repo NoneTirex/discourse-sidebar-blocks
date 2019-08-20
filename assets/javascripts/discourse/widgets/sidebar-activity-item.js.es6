@@ -3,7 +3,7 @@ import { h } from 'virtual-dom';
 import { dateNode } from 'discourse/helpers/node';
 
 createWidget('sidebar-activity-item', {
-  tagName: 'div.sidebar-activity-item',
+  tagName: 'div.sidebar-reply-item',
 
   html(attrs) {
     var url = Discourse.getURL("/t/") + attrs.slug + "/" + attrs.id + "/" + attrs.last_read_post_number;
