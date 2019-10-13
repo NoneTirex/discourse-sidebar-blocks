@@ -6,7 +6,11 @@ createWidget('sidebar-activity-item', {
   tagName: 'div.sidebar-reply-item',
 
   html(attrs) {
-    var url = Discourse.getURL("/t/") + attrs.slug + "/" + attrs.id + "/" + attrs.last_read_post_number;
+    var url = Discourse.getURL("/t/") + attrs.slug + "/" + attrs.id;
+    if (attrs.last_read_post_number)
+    {
+        url += "/" + attrs.last_read_post_number;
+    }
 
     const lastPostedAt = new Date(attrs.last_posted_at);
 
