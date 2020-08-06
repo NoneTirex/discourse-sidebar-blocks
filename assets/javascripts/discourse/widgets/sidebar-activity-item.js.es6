@@ -1,12 +1,13 @@
 import { createWidget } from 'discourse/widgets/widget';
 import { h } from 'virtual-dom';
 import { dateNode } from 'discourse/helpers/node';
+import getURL from 'discourse-common/lib/get-url';
 
 createWidget('sidebar-activity-item', {
   tagName: 'div.sidebar-reply-item',
 
   html(attrs) {
-    var url = Discourse.getURL("/t/") + attrs.slug + "/" + attrs.id;
+    var url = getURL("/t/") + attrs.slug + "/" + attrs.id;
     if (attrs.last_read_post_number)
     {
         url += "/" + attrs.last_read_post_number;
